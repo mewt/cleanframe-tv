@@ -1,8 +1,8 @@
-# CleanFrame TV — TCL compatibility fork
+# CleanFrame TV — TCL 50A20 compatibility fork
 
 This fork of [mdrzn/cleanframe-tv](https://github.com/mdrzn/cleanframe-tv) adds TCL setup support
-and a white icon for TCL's TV app. On the tested 50-inch TCL TV (previously documented as
-TCL Smart TV Pro) running Android 11, disabling
+and a white icon for TCL's TV app. On the tested TCL 50A20, a 50-inch 4K Android TV
+running Android 11, disabling
 both LauncherX and Google's setup/recovery package makes Android resolve Home directly to
 CleanFrame; the owner reports that this survives reboot. An optional accessibility redirect is
 also available with Google TV enabled. Start with the [TCL build, setup and recovery guide](docs/tcl-compatibility.md).
@@ -34,7 +34,8 @@ CleanFrame TV is an Android TV port of [CleanFrame](https://github.com/nthnclrk/
 
 | Area | Result |
 | --- | --- |
-| This fork's TV | TCL, 50-inch (screen size reported by the owner); previously documented as TCL Smart TV Pro. Exact retail model remains unconfirmed. |
+| This fork's TV | TCL 50A20, 50-inch 4K Android TV; exact model confirmed by the owner |
+| Published hardware | 3840 × 2160 VA panel, 60 Hz; 2 GB RAM, 16 GB storage; AiPQ Engine quad-core 1.3 GHz. See [specification source](docs/tcl-compatibility.md#device-specifications). |
 | Observed software | Android 11 (API 30), 32-bit ARM userspace, working Google WebView provider |
 | Verified on TCL | UI, Accessibility settings link, and optional redirect. Direct Home verified with LauncherX and setup/recovery disabled; reboot success reported by the owner. See [test details and limits](docs/tcl-compatibility.md). |
 | Other devices | Requires Android TV 8.0 (API 26) or newer. Other Google TV firmware and TCL models remain untested. |

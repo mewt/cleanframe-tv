@@ -1,18 +1,36 @@
-# TCL / Google TV compatibility preview
+# TCL 50A20 / Google TV compatibility preview
 
-This preview has been tested on one 50-inch TCL TV (previously documented as TCL Smart TV Pro)
-running Android 11. It supports direct Home
+This preview has been tested on one TCL 50A20, a 50-inch 4K Android TV running Android 11.
+It supports direct Home
 selection after manual ADB setup, or an optional redirect while Google TV stays enabled. The app
 itself never changes package enabled states or system Home preferences. It installs separately
 from the upstream release and starts with fresh settings. Other firmware remains unverified.
 
+## Device specifications
+
+The owner confirmed the tested TV's retail model as **TCL 50A20**. Earlier test notes referred
+to this same TV as TCL Smart TV Pro.
+
+The following published specifications come from [Jagat Review's hands-on review of the 50-inch
+TCL A20](https://www.jagatreview.com/2021/04/video-review-smart-tv-tcl-a20-murah-berkualitas-dan-makin-canggih/)
+(26 April 2021):
+
+| Component | Published specification |
+| --- | --- |
+| Display | 50-inch VA panel, 3840 × 2160 (4K UHD), 60 Hz |
+| Operating system | Android 11 |
+| Memory and storage | 2 GB RAM, 16 GB storage |
+| Processor | AiPQ Engine, quad-core, 1.3 GHz |
+| Connectivity | Wi-Fi 2.4/5 GHz, Bluetooth 5.0, Ethernet, three HDMI ports |
+
+These are published product specifications, not new measurements of the owner's TV. The 4K
+panel specification does not establish the resolution used by Android's interface or WebView.
+The observed 32-bit ARM userspace below describes the installed software, not the CPU's maximum
+supported architecture. Xiaomi specifications and measurements from upstream describe a different TV.
+
 ## Evidence and limits
 
-The owner identifies the screen size as 50 inches. The exact retail model remains unconfirmed;
-the recorded name alone does not establish the panel resolution, chipset, RAM or storage.
-The Xiaomi specifications and measurements in the upstream project do not describe this TCL TV.
-
-The reported TCL Smart TV Pro runs Android 11 (API 30), with a 32-bit ARM userspace and a valid
+The tested TCL 50A20 runs Android 11 (API 30), with a 32-bit ARM userspace and a valid
 Google WebView provider. Its HOME candidates are:
 
 | Handler | Intent priority |
