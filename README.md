@@ -1,7 +1,8 @@
 # CleanFrame TV — TCL compatibility fork
 
 This fork of [mdrzn/cleanframe-tv](https://github.com/mdrzn/cleanframe-tv) adds TCL setup support
-and a white icon for TCL's TV app. On the tested TCL Smart TV Pro running Android 11, disabling
+and a white icon for TCL's TV app. On the tested 50-inch TCL TV (previously documented as
+TCL Smart TV Pro) running Android 11, disabling
 both LauncherX and Google's setup/recovery package makes Android resolve Home directly to
 CleanFrame; the owner reports that this survives reboot. An optional accessibility redirect is
 also available with Google TV enabled. Start with the [TCL build, setup and recovery guide](docs/tcl-compatibility.md).
@@ -13,7 +14,7 @@ A quieter home screen for Android TV. Your apps and HDMI inputs, a photograph an
 
 CleanFrame TV is an Android TV port of [CleanFrame](https://github.com/nthnclrk/CleanFrame) by Nathan Clark, a home screen originally built for Samsung The Frame (Tizen). It keeps CleanFrame's interface and wraps it in a small Android launcher. All Samsung-specific code has been removed.
 
-**Use it at your own risk.** It has been tested on one TV. It replaces your home screen, so keep the [recovery steps](#going-back) at hand the first time you install it.
+**Use it at your own risk.** This fork's compatibility changes have been tested on one TCL TV. It replaces your home screen, so keep the [TCL recovery steps](docs/tcl-compatibility.md#recovery) at hand the first time you install it.
 
 ## What it does
 
@@ -23,7 +24,7 @@ CleanFrame TV is an Android TV port of [CleanFrame](https://github.com/nthnclrk/
 - **HDMI inputs as apps:** each HDMI port can sit on Home like an app (for example "Nintendo Switch" or "PC") and opens that input directly.
 - **All apps** lists installed TV apps and inputs. Choose up to nine for Home and arrange them with the remote.
 - **Hold OK on an app to close it** and free its memory. A short press opens it.
-- **Remote buttons (optional):** in Settings → Android TV → Remote buttons, press a vendor button that apps normally can't use (such as Xiaomi's Mi or Netflix key) and choose the app or input it opens.
+- **Remote buttons (optional):** in Settings → Android TV → Remote buttons, press a vendor button that apps normally can't use and choose the app or input it opens. Available buttons depend on the TV and remote.
 - **24- or 12-hour clock**, defaulting to the TV's setting.
 - Back on Home does nothing, so you can't fall out of the launcher by accident.
 
@@ -33,11 +34,19 @@ CleanFrame TV is an Android TV port of [CleanFrame](https://github.com/nthnclrk/
 
 | Area | Result |
 | --- | --- |
-| Reference TV | Xiaomi Mi TV Q1 (MiTV-MOOQ1), Android TV 10, MediaTek MT9632, 1.8 GB RAM, 1080p interface on a 4K panel |
-| Verified there | Home button, remote navigation in List and Dock, launching apps, All apps with HDMI inputs, Photo mode, Bing photos, hold-to-close, Mi/Netflix button remapping |
-| Memory | About 165 MB PSS for the launcher including its WebView; about 70 MB of that is file-backed and reclaimable |
-| TCL fork | TCL Smart TV Pro, Android 11: UI, Accessibility settings link, and optional redirect verified. Direct Home verified with LauncherX and setup/recovery disabled; reboot success reported by the owner. See [test details and limits](docs/tcl-compatibility.md). |
+| This fork's TV | TCL, 50-inch (screen size reported by the owner); previously documented as TCL Smart TV Pro. Exact retail model remains unconfirmed. |
+| Observed software | Android 11 (API 30), 32-bit ARM userspace, working Google WebView provider |
+| Verified on TCL | UI, Accessibility settings link, and optional redirect. Direct Home verified with LauncherX and setup/recovery disabled; reboot success reported by the owner. See [test details and limits](docs/tcl-compatibility.md). |
 | Other devices | Requires Android TV 8.0 (API 26) or newer. Other Google TV firmware and TCL models remain untested. |
+
+### Upstream test history
+
+The original project reports testing on a **Xiaomi Mi TV Q1 (MiTV-MOOQ1)** with Android TV 10,
+MediaTek MT9632, 1.8 GB RAM and a 1080p interface on a 4K panel. Its reported checks cover Home,
+List and Dock navigation, app launching, HDMI inputs, Photo mode, Bing photos, hold-to-close and
+Mi/Netflix button remapping. Its memory measurement was about 165 MB PSS including WebView,
+with about 70 MB file-backed and reclaimable. These are upstream Xiaomi results, not measurements
+or verified specifications of this fork's TCL TV.
 
 Reports from other devices are welcome; see [Contribute](#contribute).
 
@@ -80,13 +89,13 @@ Everything can be changed with the remote in **Settings**: background and photo 
 
 ### Remote buttons
 
-Many remotes have buttons that only ever open the TV maker's choice: on Xiaomi TVs the Mi button opens Live TV and the Netflix button opens Netflix. CleanFrame TV can give them a new job, all from the remote:
+Many remotes have buttons that only ever open the TV maker's choice. CleanFrame TV can give supported buttons a new job, all from the remote. The upstream Xiaomi example below demonstrates this feature; the same button assignments have not been verified on the TCL TV.
 
 1. **Settings → Android TV → Remote buttons**. The first time, choose **Turn on remote buttons** and switch on *CleanFrame TV remote buttons* in Android's Accessibility settings (Android only lets you do this yourself).
 2. **Add a button**, press the button on the remote, then pick the app or HDMI input it should open.
 3. Choose an assigned button to change it or remove it.
 
-![Remote buttons on a Xiaomi Mi TV: the Mi button (Button 5) opens YouTube and the Netflix button (Button 6) opens Jellyfin](docs/images/cleanframe-tv-remote-buttons.jpg)
+![Upstream Xiaomi example: the Mi button (Button 5) opens YouTube and the Netflix button (Button 6) opens Jellyfin](docs/images/cleanframe-tv-remote-buttons.jpg)
 
 Arrows, OK, Back, Home, volume and power keep their jobs and can't be assigned. Buttons show Android's key names, so a vendor key may appear as "Button 5".
 
@@ -149,4 +158,4 @@ Issues and pull requests are welcome; read [CONTRIBUTING.md](CONTRIBUTING.md) fi
 
 CleanFrame TV is based on [CleanFrame](https://github.com/nthnclrk/CleanFrame) by Nathan Clark. The interface and its design, the bundled wallpapers and their materials come from that project. The original code and this port use the [MIT licence](LICENSE). Fonts, photographs and logos keep their own terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-CleanFrame TV is an independent project with no affiliation to Google, Xiaomi, Samsung, Microsoft (Bing) or any streaming service. Brand marks identify the services they belong to.
+CleanFrame TV is an independent project with no affiliation to TCL, Google, Xiaomi, Samsung, Microsoft (Bing) or any streaming service. Brand marks identify the services they belong to.

@@ -1,11 +1,16 @@
 # TCL / Google TV compatibility preview
 
-This preview has been tested on one TCL Smart TV Pro running Android 11. It supports direct Home
+This preview has been tested on one 50-inch TCL TV (previously documented as TCL Smart TV Pro)
+running Android 11. It supports direct Home
 selection after manual ADB setup, or an optional redirect while Google TV stays enabled. The app
 itself never changes package enabled states or system Home preferences. It installs separately
 from the upstream release and starts with fresh settings. Other firmware remains unverified.
 
 ## Evidence and limits
+
+The owner identifies the screen size as 50 inches. The exact retail model remains unconfirmed;
+the recorded name alone does not establish the panel resolution, chipset, RAM or storage.
+The Xiaomi specifications and measurements in the upstream project do not describe this TCL TV.
 
 The reported TCL Smart TV Pro runs Android 11 (API 30), with a 32-bit ARM userspace and a valid
 Google WebView provider. Its HOME candidates are:
